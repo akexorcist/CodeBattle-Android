@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".chat.ChatActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/shadow_height"
+            android:layout_gravity="bottom"
+            android:background="@drawable/shape_shadow_gradient_top" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/extra_extra_light_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_padding_extra_small">
+
+        <ImageButton
+            android:id="@+id/btn_add_photo"
+            style="@style/Button.Borderless"
+            android:layout_width="@dimen/add_photo_button_size"
+            android:layout_height="@dimen/add_photo_button_size"
+            android:contentDescription="@null"
+            android:padding="@dimen/add_photo_button_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_add_photo" />
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_padding_small"
+            android:layout_marginStart="@dimen/margin_padding_small"
+            android:layout_weight="1"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btn_send_message"
+            style="@style/Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_padding"
+            android:minWidth="0dp"
+            android:paddingEnd="@dimen/send_message_button_padding"
+            android:paddingStart="@dimen/send_message_button_padding"
+            android:text="@string/chat_send_message" />
+    </LinearLayout>
+</LinearLayout>

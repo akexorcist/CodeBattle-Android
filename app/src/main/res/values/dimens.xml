@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="login_title_margin_top">40dp</dimen>
+    <dimen name="profile_image_size">40dp</dimen>
+    <dimen name="message_image_size">180dp</dimen>
+    <dimen name="add_photo_button_size">60dp</dimen>
+    <dimen name="add_photo_button_padding">10dp</dimen>
+    <dimen name="send_message_button_padding">10dp</dimen>
+    <dimen name="shadow_height">6dp</dimen>
+
+</resources>
