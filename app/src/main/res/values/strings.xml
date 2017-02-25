@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Code Battle</string>
+    <string name="firebase_dev_day">Firebase Dev Day</string>
+
+    <string name="login_authentication_failure">Authentication failed.</string>
+
+    <string name="chat_empty_message">Please say something.</string>
+    <string name="chat_send_message">Sent</string>
+    <string name="chat_initialize_message_failure">Something wrong. Please try again later.</string>
+    <string name="chat_upload_photo_failure">Can\'t upload photo to server. Please try again later.</string>
+    <string name="chat_sign_out_failure">Can\'t sign out. Please try again later.</string>
+    <string name="chat_menu_sign_out">Sign out</string>
+
+</resources>
