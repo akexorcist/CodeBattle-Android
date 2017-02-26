@@ -7,9 +7,7 @@ import android.view.View;
 import com.firebasedevday.codebattle.R;
 import com.firebasedevday.codebattle.chat.ChatActivity;
 import com.firebasedevday.library.BaseActivity;
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 
 public class LoginActivity extends BaseActivity {
@@ -49,15 +47,7 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_GOOGLE_SIGN_IN) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if (result.isSuccess()) {
-                GoogleSignInAccount account = result.getSignInAccount();
-                firebaseAuthWithGoogle(account);
-            } else {
-                onLoginFailure();
-            }
-        }
+        // TODO Login 8 : Handle result from google sign in result
     }
 
     private void bindView() {
@@ -93,7 +83,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        // TODO Login 8 : Sign in to firebase auth with google account
+        // TODO Login 9 : Sign in to firebase auth with google account
     }
 
     private void onLoginCompleted() {
