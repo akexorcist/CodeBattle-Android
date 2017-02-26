@@ -43,7 +43,7 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onStop() {
         super.onStop();
-        // TODO Login 7 : Manage firebase auth when activity starting
+        // TODO Login 7 : Manage firebase auth when activity stopping
     }
 
     @Override
