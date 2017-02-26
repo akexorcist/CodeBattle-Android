@@ -15,7 +15,8 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_chat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:listitem="@layout/view_other_message_item" />
 
         <View
             android:layout_width="match_parent"
