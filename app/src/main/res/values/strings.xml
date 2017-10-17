@@ -12,4 +12,6 @@
     <string name="chat_sign_out_failure">Can\'t sign out. Please try again later.</string>
     <string name="chat_menu_sign_out">Sign out</string>
 
+    <string name="error_message_photo_url_not_found">Photo url not found</string>
+
 </resources>
