@@ -225,13 +225,17 @@ public class ChatActivity extends BaseActivity {
     private void sendMessageToDatabase(String text) {
         if (user != null) {
             DatabaseReference databaseReference = messageReference.push();
-            Message message = new Message()
-                    .setAvatar(user.getPhotoUrl().toString())
-                    .setData(text)
-                    .setType(Message.TYPE_TEXT)
-                    .setSenderId(user.getUid())
-                    .setUsername("Android");
-            databaseReference.setValue(message);
+            if (user.getPhotoUrl() != null) {
+                Message message = new Message()
+                        .setAvatar(user.getPhotoUrl().toString())
+                        .setData(text)
+                        .setType(Message.TYPE_TEXT)
+                        .setSenderId(user.getUid())
+                        .setUsername("Android");
+                databaseReference.setValue(message);
+            } else {
+                showAlert(getString(R.string.error_message_photo_url_not_found));
+            }
         } else {
             goToLoginScreen();
         }
@@ -292,13 +296,15 @@ public class ChatActivity extends BaseActivity {
     private void onUploadPhotoSuccess(DatabaseReference databaseReference, UploadTask.TaskSnapshot taskSnapshot) {
         if (user != null) {
             Uri downloadUrl = taskSnapshot.getDownloadUrl();
-            Message message = new Message()
-                    .setAvatar(user.getPhotoUrl().toString())
-                    .setData(downloadUrl.toString())
-                    .setType(Message.TYPE_IMAGE)
-                    .setSenderId(user.getUid())
-                    .setUsername("Android");
-            databaseReference.setValue(message);
+            if (downloadUrl != null && user.getPhotoUrl() != null) {
+                Message message = new Message()
+                        .setAvatar(user.getPhotoUrl().toString())
+                        .setData(downloadUrl.toString())
+                        .setType(Message.TYPE_IMAGE)
+                        .setSenderId(user.getUid())
+                        .setUsername("Android");
+                databaseReference.setValue(message);
+            }
         } else {
             goToLoginScreen();
         }
